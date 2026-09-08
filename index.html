@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .produtos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .produto {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 1px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="produtos-container">
+        <h1>Catalogo de Produtos</h1>
+        <form id="filtroForm">
+            <label for="inputField">Categoria do Produto:</label>
+            <input type="text" id="inputField" placeholder="Digite a categoria...">
+            <button type="submit" id="submitButton">Buscar</button>
+        </form>
+
+        <div id="produtosContainer"></div>
+    </div>
+
+    <script>
+        const produtos = [
+            { nome: 'ruby rose', especificacao: 'rosa', categoria: 'blush', preco: 100.00 },
+            { nome: 'melu', especificacao: 'rose', categoria: 'blush', preco: 150.00 },
+            { nome: 'sophia', especificacao: 'verde', categoria: 'blush', preco: 200.00 },
+            { nome: 'Franciny', especificacao: 'lipbunny', categoria: 'gloss', preco: 250.00 },
+            { nome: 'Luna', especificacao: 'luna', categoria: 'gloss', preco: 300.00 },
+            { nome: 'Bruna Tavares', especificacao: 'Base Liquida', categoria: 'Base', preco: 300.00 },
+            { nome: 'Dior', especificacao: 'Base Liquida', categoria: 'Base', preco: 500.00 },
+            { nome: 'Boca rosa', especificacao: 'pó compacto sem cor', categoria: 'pó', preco: 500.00 }
+
+        ];
+
+        const divProdutos = document.getElementById("produtosContainer");
+        const campoCategoria = document.getElementById("inputField");
+        const formulario = document.getElementById("filtroForm");
+
+        function renderizarProdutos(listaProdutos) {
+            divProdutos.innerHTML = "";
+
+            if (listaProdutos.length === 0) {
+                const vazio = document.createElement('p');
+                vazio.textContent = 'Nenhum produto encontrado para essa categoria.';
+                divProdutos.appendChild(vazio);
+                return;
+            }
+
+            listaProdutos.forEach((produto) => {
+                const produtoDiv = document.createElement('div');
+                produtoDiv.classList.add('produto');
+
+                const nomeProduto = document.createElement('h2');
+                nomeProduto.textContent = produto.nome;
+
+                const especificacaoProduto = document.createElement('p');
+                especificacaoProduto.textContent = `Especificação: ${produto.especificacao}`;
+
+                const categoriaProduto = document.createElement('p');
+                categoriaProduto.textContent = `Categoria: ${produto.categoria}`;
+
+                const precoProduto = document.createElement('p');
+                precoProduto.textContent = `Preço: R$ ${produto.preco.toFixed(2)}`;
+
+                produtoDiv.appendChild(nomeProduto);
+                produtoDiv.appendChild(especificacaoProduto);
+                produtoDiv.appendChild(categoriaProduto);
+                produtoDiv.appendChild(precoProduto);
+
+                divProdutos.appendChild(produtoDiv);
+            });
+        }
+
+        function filtrarProdutos() {
+            const valorBusca = campoCategoria.value.trim().toLowerCase();
+
+            if (!valorBusca) {
+                renderizarProdutos(produtos);
+                return;
+            }
+
+            const filtrados = produtos.filter((produto) =>
+                produto.categoria.toLowerCase().includes(valorBusca)
+            );
+
+            renderizarProdutos(filtrados);
+        }
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
+            filtrarProdutos();
+        });
+
+        renderizarProdutos(produtos);
+    </script>
+    
+</body>
+</html>
