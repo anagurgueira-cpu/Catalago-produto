@@ -1,0 +1,54 @@
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 40px;
+            color: #1e293b;
+            text-align: center;
+        }
+        
+        .produtos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #produtosContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .produto {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            margin: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .produto:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
+        }
+
+        .produto h2 {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin: 0 0 10px 0;
+            text-transform: capitalize;
+        }
+
+        .produto p {
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 4px 0;
+        }
