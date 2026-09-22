@@ -1,16 +1,16 @@
 
 const produtos = [
-    ['ruby rose', 'rosa', 'blush', 100.00],
-    ['melu', 'rose', 'blush', 150.00],
-    ['sophia', 'verde', 'blush', 200.00],
-    ['Franciny', 'lipbunny', 'Gloss', 250.00],
-    ['Luna', 'luna', 'Gloss', 300.00],
-    ['Bruna Tavares', 'Base Liquida', 'Base', 300.00],
-    ['Dior', 'Base Liquida', 'Base', 500.00],
-    ['Bruna Tavares', 'Gloss parceria brigerton', 'Gloss', 83.00],
-    ['Mari Maria', 'gloss mari maria lip juice', 'Gloss', 56.00],
-    ['Too Faced', 'sombra em stick too faced quickie queen', 'Sombra', 150.00],
-    ['Guerlain', 'paleta de sombras guerlain ombres g', 'Sombra', 573.00],
+    ['CAROLINA HERRERA', 'blush líquido carolina herrera good girl blusher', 'blush', 300.00, 'img/BlushCarolinaherrera.jpg'],
+    ['RARE BEAUTY', 'blush líquido rare beauty soft pinch', 'blush', 150.00, 'img/BlushRareBeauty.jpg'],
+    ['BRUNA TAVARES', 'blush contorno bruna tavares bt blush', 'blush', 66.00, 'img/BlushBrunaTavares.jpg'],
+    ['BRUNA TAVARES', 'blush em stick bruna tavares coca-cola', 'blush', 90.00, 'img/BlushBrunaTavares.jpg'],
+    ['Franciny', 'lipbunny', 'Gloss', 250.00, 'img/GlossFranciny.jpg'],
+    ['Luna', 'luna', 'Gloss', 300.00, 'img/GlossLuna.jpg'],
+    ['Bruna Tavares', 'Base Liquida', 'Base', 300.00, 'img/BaseBrunaTavares.jpg'],
+    ['Bruna Tavares', 'Gloss parceria brigerton', 'Gloss', 83.00, 'img/GlossBrunaTavares.jpg'],
+    ['Mari Maria', 'gloss mari maria lip juice', 'Gloss', 56.00, 'img/GlossMariMaria.jpg'],
+    ['Too Faced', 'sombra em stick too faced quickie queen', 'Sombra', 150.00, 'img/SombraTooFaced.jpg'],
+    ['Guerlain', 'paleta de sombras guerlain ombres g', 'Sombra', 573.00, 'img/SombraGuerlain.jpg'],
 ];
 
     const divProdutos = document.getElementById("produtosContainer");
