@@ -1,16 +1,16 @@
 
 const produtos = [
-    { nome: 'ruby rose', especificacao: 'rosa', categoria: 'blush', preco: 100.00 },
-    { nome: 'melu', especificacao: 'rose', categoria: 'blush', preco: 150.00 },
-    { nome: 'sophia', especificacao: 'verde', categoria: 'blush', preco: 200.00 },
-    { nome: 'Franciny', especificacao: 'lipbunny', categoria: 'Gloss', preco: 250.00 },
-    { nome: 'Luna', especificacao: 'luna', categoria: 'Gloss', preco: 300.00 },
-    { nome: 'Bruna Tavares', especificacao: 'Base Liquida', categoria: 'Base', preco: 300.00 },
-    { nome: 'Dior', especificacao: 'Base Liquida', categoria: 'Base', preco: 500.00 },
-    { nome: 'Bruna Tavares', especificacao: 'Gloss parceria brigerton', categoria: 'Gloss', preco: 83.00 },
-    { nome: 'Mari Maria', especificacao: 'gloss mari maria lip juice', categoria: 'Gloss', preco: 56.00 },
-    { nome: 'Too Faced', especificacao: 'sombra em stick too faced quickie queen', categoria: 'Sombra', preco: 150.00 },
-    { nome: 'Guerlai', especificacao: 'paleta de sombras guerlain ombres g', categoria: 'Sombra', preco: 573.00 },
+    ['ruby rose', 'rosa', 'blush', 100.00],
+    ['melu', 'rose', 'blush', 150.00],
+    ['sophia', 'verde', 'blush', 200.00],
+    ['Franciny', 'lipbunny', 'Gloss', 250.00],
+    ['Luna', 'luna', 'Gloss', 300.00],
+    ['Bruna Tavares', 'Base Liquida', 'Base', 300.00],
+    ['Dior', 'Base Liquida', 'Base', 500.00],
+    ['Bruna Tavares', 'Gloss parceria brigerton', 'Gloss', 83.00],
+    ['Mari Maria', 'gloss mari maria lip juice', 'Gloss', 56.00],
+    ['Too Faced', 'sombra em stick too faced quickie queen', 'Sombra', 150.00],
+    ['Guerlain', 'paleta de sombras guerlain ombres g', 'Sombra', 573.00],
 ];
 
     const divProdutos = document.getElementById("produtosContainer");
@@ -32,16 +32,16 @@ const produtos = [
                 produtoDiv.classList.add('produto');
 
                 const nomeProduto = document.createElement('h2');
-                nomeProduto.textContent = produto.nome;
+                nomeProduto.textContent = produto[0];
 
                 const especificacaoProduto = document.createElement('p');
-                especificacaoProduto.textContent = `Especificação: ${produto.especificacao}`;
+                especificacaoProduto.textContent = `Especificação: ${produto[1]}`;
 
                 const categoriaProduto = document.createElement('p');
-                categoriaProduto.textContent = `Categoria: ${produto.categoria}`;
+                categoriaProduto.textContent = `Categoria: ${produto[2]}`;
 
                 const precoProduto = document.createElement('p');
-                precoProduto.textContent = `Preço: R$ ${produto.preco.toFixed(2)}`;
+                precoProduto.textContent = `Preço: R$ ${produto[3].toFixed(2)}`;
 
                 produtoDiv.appendChild(nomeProduto);
                 produtoDiv.appendChild(especificacaoProduto);
@@ -61,9 +61,9 @@ const produtos = [
             }
 
             const filtrados = produtos.filter((produto) =>
-                produto.categoria.toLowerCase().includes(valorBusca) ||
-                produto.nome.toLowerCase().includes(valorBusca) ||
-                produto.especificacao.toLowerCase().includes(valorBusca)
+                produto[2].toLowerCase().includes(valorBusca) ||
+                produto[0].toLowerCase().includes(valorBusca) ||
+                produto[1].toLowerCase().includes(valorBusca)
             );
 
             renderizarProdutos(filtrados);
